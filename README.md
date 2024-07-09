@@ -1,40 +1,12 @@
-# CompSt 751 Group Project
+# Group Project
 
 ## Name
 
 Group 7 Double Sort.
 
-## People
-
-Please list all the team members with name, github username and email,e.g. 
-John Boyland, @boyland, boyland@uwm.edu
-
-* Lourdu Rohith Reddy Gali, @LourduRohithReddyGali, lgali@uwm.edu
-* Sai Eka Vardhan Reddy Chitreddy, @chitred2, chitred2@uwm.edu
-* Peter Li, @peterlli, ylli@uwm.edu
-* Anirudh Gokamalla, @gokamal2, gokamal2@uwm.edu
-* Mihir Dixit, @MihirDixit14, mdixit@uwm,edu
-* Sreejith Krishna Naveen Kumar, @sreejithkrishna99, sknaveen@uwm.edu
-
 ## Paper
 
 https://dl.acm.org/doi/10.1145/1734263.1734392
-
-### Scope
-
-Describe what you will be implementing.
-
-As we are a team of 6 we would like to implement the whole paper by spitting the team into 3 each
-
-1st group will work on double insertion sort and its related test cases
-1. Sai Eka Vardhan Reddy Chitreddy
-2. ANIRUDH GOKAMALLA 
-3. Sreejith Krishna Naveen Kumar
-
-2nd group will work on double selection sort and its related test cases
-1. Peter Li
-2. Lourdu Rohith Reddy Gali
-3. Mihir Dixit
 
 ###### implentation
 1. The base implementation
@@ -104,44 +76,3 @@ Provide a section for each test suite that is planned and a paragraph describing
 * [Exhaustive test](src/ExhaustiveTest.java) (abstract test file) 
 * [Exhaustive test - double insertion](src/ExhaustiveInsertionTest.java) (extends base implementation test file).
 * [Exhaustive test - double selection](src/ExhaustiveSelectionTest.java) (extends base implementation test file).
-
-## Status
-
-Add section using the current date as the heading and describe the status in a few sentences or a few paragraphs.
-
-### 10/01/2023
-* We have determined what functionality and unit tests we will need to implement.
-* We will be splitting into 2 teams of 3 people each - group focus and members listed above.
-
-### 10/09/2023
-* Created test cases per Professor Boyland's comments on Canvas.
-   * We have updated the src folder to include blank test files. These files will be used later for testing functionality (base implementation), efficiency, random, and exhaustive.
-* Updated empty portions of Github's readme.
-
-### 10/12/2023
-* Updated previously added information (from 10/01 and 10/09) to be more concise and be under the proper headers.
-
-### 10/14/2023
-* Added sources.txt. In this file, we will be listing all the sources/resources that we plan on utilizing for our project.
-* Created a rough draft of what sources we intend to utilize.
-
-### 10/15/2023
-* Updated sources.txt rough draft to be more concise and what we intend to utilize and convert.
-
-### 11/05/2023
-* Implemented insertion sort and selection sort in the respective files(Insertion Sort.java and selectionSort.java)
-* Added base test cases for both insertion and selection sort.
-
-### 11/16/2023
-* Reworked base implementation test files.
-* Received exhaustive test gen program from Professor Boyland. Started altering the program to work with our project and generate the correct file format and tests.
-
-### 11/17/2023
-* Completed exhaustive test gen and exhaustive testing.
-
-### 11/30/2023
-* Completed efficiency tests.
-
-### 12/03/2023
-* Fixed compiler errors in random testing by adding some rudimentary test cases. May not need random testing files after conversation with Dr. Boyland from a couple of weeks ago.
-
