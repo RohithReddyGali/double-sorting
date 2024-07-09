@@ -1,0 +1,89 @@
+Paper from ACM Library:
+https://dl.acm.org/doi/epdf/10.1145/1734263.1734392
+
+We plan on replicating the double insertion and selection code provided in this paper. Specifically, the paper directly provides an implementation
+of double insertion sort via artifacts/snippets of java code that we will be implementing. We plan on utilizing this paper's implementation of
+double insertion sort. However, it references external site's code for double selection sort that is written in C++.
+
+Double selection sort referenced in our paper have selected:
+http://pr.stewartsplace.org.uk/d/sortbench.d
+
+While our selected paper does not directly provide code or artifacts inside regarding double selection sort, the paper cites an algorithm 
+written in C++ from another site and makes a couple of references this algorithm throughout the paper. Since the external resource provides code
+in C++, we will be converting the code to java and only the portion on double selection sort as this resource includes C++ code on other algorithms
+that are irrelevant to our project. This additional resource is listed as reference 6 in the paper's references page.
+
+Additional resources for consideration for double selection sort:
+https://www.researchgate.net/publication/330084245_Improved_Double_Selection_Sort_using_Algorithm/fulltext/5c2cb30e458515a4c7075f85/Improved-Double-Selection-Sort-using-Algorithm.pdf
+
+This link is a potential point of interest for us as it provides pseudo-code for double selection sort as well as visuals.
+This link also references our selected paper from the ACM Library and thus may provide additional context and resources for 
+when we implement the algorithm from our paper. We may convert and implement the pseudo code into java code for our project. 
+Listed as reference 4 in the references page of the site.
+
+We will be sure to add any additional resources utilized in this page.
+
+Selection sort code conversion (we converted the artifact from the selection sort reference above) 
+received from chatgpt pasted below. Will alter to make the code ours.
+    public void sort(int[] data) {
+        for (int pass = 0; pass < data.length / 2; pass++) {
+            // Print the array for debugging
+            printList(data);
+            
+            // Set minimum and maximum to first element
+            int minIndex = pass, maxIndex = pass;
+            int min = data[pass], max = data[pass];
+
+            for (int i = pass + 1; i < data.length - pass; i++) {
+                if (data[i] < min) {
+                    minIndex = i;
+                    min = data[i];
+                } else if (data[i] > max) {
+                    maxIndex = i;
+                    max = data[i];
+                }
+            }
+
+            // Debugging output
+            System.out.printf("Pass %d, Min %d at index %d, Max %d at index %d%n", pass, min, minIndex, max, maxIndex);
+
+            // Swap minimum element with first element
+            if (minIndex != pass) {
+                data[minIndex] = data[pass];
+                data[pass] = min;
+            }
+
+            // Swap maximum element with last element
+            if (maxIndex == pass) { // max was swapped with min
+                data[minIndex] = data[data.length - pass - 1];
+                data[data.length - pass - 1] = max;
+            } else if (maxIndex != data.length - pass - 1) {
+                data[maxIndex] = data[data.length - pass - 1];
+                data[data.length - pass - 1] = max;
+            }
+        }
+    }
+    
+    public static void printList(int[] data) {
+        for (int datum : data) {
+            System.out.print(datum + " ");
+        }
+        System.out.println();
+    }
+    
+The following code was recieved from ChatGPT to make the selection sort more efficient. We have not implemented this variation
+and may be required to make some adjustments to our code to make this fully functional with our codebase.
+	int minIndex = IntStream.range(pass, data.length - pass)
+		.reduce((i, j) -> data[i] < data[j] ? i : j)
+		.orElse(pass);
+		
+	int maxIndex = IntStream.range(pass, data.length - pass)
+		.reduce((i, j) -> data[i] > data[j] ? i : j)
+		.orElse(pass);
+		
+The following code is taken from/inspired by this site: https://stackoverflow.com/questions/28970799/how-to-create-a-array-with-n-random-integers
+We made modifications to it to suit our needs.
+	int[]  randomIntsArray = IntStream.generate(() -> new Random().nextInt(100)).limit(100).toArray();
+	
+	
+	
